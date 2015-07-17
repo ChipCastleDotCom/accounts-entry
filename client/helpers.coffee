@@ -41,7 +41,7 @@ UI.registerHelper 'showCreateAccountLink', ->
 
 UI.registerHelper 'fluidLayout', ->
   AccountsEntry.settings.fluidLayout is true
-  
+
 UI.registerHelper 'talkingToServer', ->
   if AccountsEntry.settings.showSpinner is true
     Meteor.Spinner.options = AccountsEntry.settings.spinnerOptions
@@ -53,13 +53,41 @@ UI.registerHelper 'containerCSSClass', ->
   if AccountsEntry.settings.useContainer is false
     "accounts-entry-container"
   else
-    if AccountsEntry.settings.fluidLayout is true
-      "container-fluid"
+    if AccountsEntry.settings.useMaterialDesignLite is true
+      "mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--overlay-drawer-button"
     else
-      "container"
-    
+      if AccountsEntry.settings.fluidLayout is true
+        "container-fluid"
+      else
+        "container"
+
 UI.registerHelper 'rowCSSClass', ->
-  if AccountsEntry.settings.fluidLayout is true
-    "row-fluid"
+  if AccountsEntry.settings.useMaterialDesignLite is true
+    "mdl-grid"
   else
-    "row"    
+    if AccountsEntry.settings.fluidLayout is true
+      "row-fluid"
+    else
+      "row"
+
+UI.registerHelper 'linkCSSClass', ->
+  if AccountsEntry.settings.useMaterialDesignLite is true
+    "mdl-navigation__link"
+    ""
+  else
+    ""
+
+UI.registerHelper 'formGroupCSSClass', ->
+  if AccountsEntry.settings.useMaterialDesignLite is true
+    "mdl-textfield mdl-js-textfield"
+  else
+    "form-group"
+
+UI.registerHelper 'labelCSSClass', ->
+  "mdl-textfield__label"
+
+UI.registerHelper 'inputCSSClass', ->
+  "mdl-textfield__input"
+
+UI.registerHelper 'buttonCSSClass', ->
+  "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
