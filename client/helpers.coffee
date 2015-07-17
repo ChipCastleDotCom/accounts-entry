@@ -78,7 +78,7 @@ UI.registerHelper 'rowCSSClass', ->
 
 UI.registerHelper 'linkCSSClass', ->
   if AccountsEntry.settings.useMaterialDesignLite is true
-    "mdl-navigation__link"
+    #TODO Why isn't "mdl-navigation__link" working
     ""
   else
     ""
@@ -90,10 +90,25 @@ UI.registerHelper 'formGroupCSSClass', ->
     "form-group"
 
 UI.registerHelper 'labelCSSClass', ->
-  "mdl-textfield__label"
+  if AccountsEntry.settings.useMaterialDesignLite is true
+    "mdl-textfield__label"
+  else
+    ""
 
 UI.registerHelper 'inputCSSClass', ->
-  "mdl-textfield__input"
+  if AccountsEntry.settings.useMaterialDesignLite is true
+    "mdl-textfield__input"
+  else
+    "form-control"
 
 UI.registerHelper 'buttonCSSClass', ->
-  "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+  if AccountsEntry.settings.useMaterialDesignLite is true
+    "mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+  else
+    "btn btn-block btn-default"
+
+UI.registerHelper 'errorCSSClass', ->
+  if AccountsEntry.settings.useMaterialDesignLite is true
+    "mdl-textfield__error"
+  else
+    "alert alert-danger"
