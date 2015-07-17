@@ -61,6 +61,12 @@ UI.registerHelper 'containerCSSClass', ->
       else
         "container"
 
+UI.registerHelper 'gridCSSClass', (columns = 12) ->
+  if AccountsEntry.settings.useMaterialDesignLite is true
+    "mdl-cell mdl-cell--{{columns}}-col"
+  else
+    "entry col-md-4 col-md-offset-4"
+
 UI.registerHelper 'rowCSSClass', ->
   if AccountsEntry.settings.useMaterialDesignLite is true
     "mdl-grid"
