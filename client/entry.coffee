@@ -11,6 +11,7 @@ AccountsEntry =
     showOtherLoginServices: true
     fluidLayout: false
     useContainer: true
+    useMaterialDesignLite: true
     signInAfterRegistration: true
     emailVerificationPendingRoute: '/verification-pending'
     showSpinner: true
