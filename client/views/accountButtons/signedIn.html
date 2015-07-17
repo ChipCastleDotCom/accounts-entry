@@ -1,7 +1,7 @@
 <template name="entrySignedIn">
 {{#if profileUrl}}
   {{#wrapLinksLi}}
-    <a class='profileLink' href='{{profileUrl}}'>{{{beforeSignedInAs}}}{{signedInAs}}</a>
+    <a class="profileLink {{linkCSSClass}}" href='{{profileUrl}}'>{{{beforeSignedInAs}}}{{signedInAs}}</a>
   {{/wrapLinksLi}}
 {{else}}
   {{#wrapLinksLi}}
@@ -10,6 +10,6 @@
 {{/if}}
 
 {{#wrapLinksLi}}
-  <a href="{{pathFor 'entrySignOut'}}">{{{beforeSignOut}}}{{t9n "signOut"}}</a>
+  <a class="{{linkCSSClass}}" href="{{pathFor 'entrySignOut'}}">{{{beforeSignOut}}}{{t9n "signOut"}}</a>
 {{/wrapLinksLi}}
 </template>

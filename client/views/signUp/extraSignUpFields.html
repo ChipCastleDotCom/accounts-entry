@@ -6,7 +6,7 @@
 
 <template name="_entryExtraSignUpField">
     {{#if isTextField }}
-    <div class="form-group">
+    <div class="{{formGroupCSSClass}}">
         {{text_field field type=type required=required label=label placeholder=placeholder }}
     </div>
     {{/if}}

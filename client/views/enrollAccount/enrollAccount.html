@@ -1,24 +1,26 @@
 <template name='entryEnrollAccount'>
-  <div class="container">
-    <div class="row">
+  <div class="{{containerCSSClass}}">
+    <div class="{{rowCSSClass}}">
       {{#if logo}}
         <div class="entry-logo">
-            <a href="/"><img src="{{logo}}" alt="logo"></a>
+          <a href="/" class="{{linkCSSClass}}"><img src="{{logo}}" alt="logo"></a>
         </div>
       {{/if}}
-      <div class="entry col-md-4 col-md-offset-4">
+      <div class="entry {{gridCSSClass}}">
         {{#if error}}
-          <div class='alert alert-danger'>{{error}}</div>
+          <div class="{{errorCSSClass}}">{{error}}</div>
         {{/if}}
         <h3>{{t9n "choosePassword"}}</h3>
         <form id='setPassword'>
-          <div class="form-group">
-            <input type="password" name="new-password" class="form-control" value=''>
+          <div class="{{formGroupCSSClass}}">
+            <input type="password" name="new-password"
+            class="{{inputCSSClass}}" value=''>
           </div>
-          <button type="submit" class="btn btn-default">{{t9n "setPassword"}}</button>
+          <button type="submit" class="{{buttonCSSClass}}">{{t9n "setPassword"}}</button>
         </form>
         {{#if showSignupCode}}
-          <p class="entry-signup-cta">{{t9n 'dontHaveAnAccount'}} <a href="/sign-up">{{t9n 'signUp'}}</a></p>
+          <p class="entry-signup-cta">{{t9n 'dontHaveAnAccount'}} <a
+            href="/sign-up" class="{{linkCSSClass}}">{{t9n 'signUp'}}</a></p>
         {{/if}}
       </div>
     </div>
